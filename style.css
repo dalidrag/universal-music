@@ -1355,7 +1355,7 @@ a:hover .nav-title,
 /* Hide the menu on small screens when JavaScript is available.
  * It only works with JavaScript.
  */
-
+/*
 .js .main-navigation ul,
 .main-navigation .menu-item-has-children > a > .icon,
 .main-navigation .page_item_has_children > a > .icon,
@@ -1408,7 +1408,7 @@ a:hover .nav-title,
 }
 
 /* Menu toggle */
-
+/*
 .menu-toggle {
 	background-color: transparent;
 	border: 0;
@@ -1426,7 +1426,7 @@ a:hover .nav-title,
 }
 
 /* Display the menu toggle when JavaScript is available. */
-
+/*
 .js .menu-toggle {
 	display: block;
 }
@@ -1461,7 +1461,7 @@ a:hover .nav-title,
 }
 
 /* Dropdown Toggle */
-
+/*
 .dropdown-toggle {
 	background-color: transparent;
 	border: 0;
@@ -1489,10 +1489,10 @@ a:hover .nav-title,
 }
 
 .dropdown-toggle.toggled-on .icon {
-	-ms-transform: rotate(-180deg); /* IE 9 */
-	-webkit-transform: rotate(-180deg); /* Chrome, Safari, Opera */
+	-ms-transform: rotate(-180deg); 
+	-webkit-transform: rotate(-180deg); 
 	transform: rotate(-180deg);
-}
+} */
 
 /* Scroll down arrow */
 
@@ -1519,9 +1519,14 @@ html {
 	box-sizing: inherit;
 }
 
-body {
-	background: #fff;
-	/* Fallback for when there is no custom background color defined. */
+body::before {
+	content:'';
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-image: url('assets/images/coffee.jpg');
 }
 
 #page {
@@ -1541,6 +1546,10 @@ body {
 	clear: both;
 	content: "";
 	display: block;
+}
+
+.site-content-contain {
+	background-color: transparent;
 }
 
 /*--------------------------------------------------------------
@@ -1872,6 +1881,8 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 }
 
 .site-content {
+	position: relative;
+	z-index: 2;
 	padding: 2.5em 0 0;
 }
 
@@ -3330,6 +3341,10 @@ p > object:only-child {
 	}
 }
 
+#top-menu li {
+	display: inline;
+}
+
 @media screen and (min-width: 48em) {
 
 	/* Typography */
@@ -3451,7 +3466,6 @@ p > object:only-child {
 	/* Navigation */
 
 	.navigation-top {
-		bottom: 0;
 		font-size: 14px;
 		font-size: 0.875rem;
 		left: 0;
@@ -3486,7 +3500,7 @@ p > object:only-child {
 	}
 
 	/* Main Navigation */
-
+	
 	.js .menu-toggle,
 	.js .dropdown-toggle {
 		display: none;
@@ -3494,12 +3508,6 @@ p > object:only-child {
 
 	.main-navigation {
 		width: auto;
-	}
-
-	.js .main-navigation ul,
-	.js .main-navigation ul ul,
-	.js .main-navigation > div > ul {
-		display: block;
 	}
 
 	.main-navigation ul {
@@ -3516,10 +3524,6 @@ p > object:only-child {
 	.main-navigation li {
 		border: 0;
 		display: inline-block;
-	}
-
-	.main-navigation li li {
-		display: block;
 	}
 
 	.main-navigation a {
@@ -3550,17 +3554,6 @@ p > object:only-child {
 		bottom: -1px;
 		width: 0;
 		z-index: 100000;
-	}
-
-	.main-navigation ul li.menu-item-has-children.focus:before,
-	.main-navigation ul li.menu-item-has-children:hover:before,
-	.main-navigation ul li.menu-item-has-children.focus:after,
-	.main-navigation ul li.menu-item-has-children:hover:after,
-	.main-navigation ul li.page_item_has_children.focus:before,
-	.main-navigation ul li.page_item_has_children:hover:before,
-	.main-navigation ul li.page_item_has_children.focus:after,
-	.main-navigation ul li.page_item_has_children:hover:after {
-		display: block;
 	}
 
 	.main-navigation ul li.menu-item-has-children:before,
@@ -3624,35 +3617,6 @@ p > object:only-child {
 		left: 5px;
 		position: relative;
 		top: -1px;
-	}
-
-	.main-navigation ul ul .menu-item-has-children > a > .icon,
-	.main-navigation ul ul .page_item_has_children > a > .icon {
-		margin-top: -9px;
-		left: auto;
-		position: absolute;
-		right: 1em;
-		top: 50%;
-		-webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
-		-ms-transform: rotate(-90deg); /* IE 9 */
-		transform: rotate(-90deg);
-	}
-
-	.main-navigation ul ul ul {
-		left: -999em;
-		margin-top: -1px;
-		top: 0;
-	}
-
-	.main-navigation ul ul li.menu-item-has-children.focus:before,
-	.main-navigation ul ul li.menu-item-has-children:hover:before,
-	.main-navigation ul ul li.menu-item-has-children.focus:after,
-	.main-navigation ul ul li.menu-item-has-children:hover:after,
-	.main-navigation ul ul li.page_item_has_children.focus:before,
-	.main-navigation ul ul li.page_item_has_children:hover:before,
-	.main-navigation ul ul li.page_item_has_children.focus:after,
-	.main-navigation ul ul li.page_item_has_children:hover:after {
-		display: none;
 	}
 
 	.site-header .site-navigation-fixed .menu-scroll-down {
