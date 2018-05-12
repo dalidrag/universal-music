@@ -25,30 +25,21 @@
 
 		<div class="panel-image" style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);">
 			<div class="panel-image-prop" style="padding-top: <?php echo esc_attr( $ratio ); ?>%"></div>
-		</div><!-- .panel-image -->
+		</div><!-- .panel-image -->		
 
 	<?php endif; ?>
 
 	<div class="panel-content">
 		<div class="wrap">
-			<header class="entry-header">
-				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-
-				<?php twentyseventeen_edit_link( get_the_ID() ); ?>
-
-			</header><!-- .entry-header -->
-
-			<div class="entry-content">
-				<?php
-					/* translators: %s: Name of current post */
-					the_content( sprintf(
-						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
-						get_the_title()
-					) );
-				?>
-			</div><!-- .entry-content -->
-
+			<div class="front-page-image">
+		  	<img src="wp-content/themes/UniversalMusic/assets/images/book-cover-image.jpg" alt="Book cover image" />
+			</div>
 		</div><!-- .wrap -->
 	</div><!-- .panel-content -->
 
 </article><!-- #post-## -->
+
+<audio autoplay loop>
+  <source src="wp-content/themes/UniversalMusic/assets/audio/Millions of Stars loop.mp3" type="audio/mpeg">
+  <source src="wp-content/themes/UniversalMusic/assets/audio/Millions of Stars loop.ogg" type="audio/ogg">
+</audio>
